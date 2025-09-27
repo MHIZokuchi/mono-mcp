@@ -14,8 +14,10 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.exceptions import HTTPException
 from decouple import config as decouple_config
+from .config import validate_env
 
 load_dotenv()
+validate_env()
 
 mcp = FastMCP("Personal banking MCP powered by Mono API")
 
