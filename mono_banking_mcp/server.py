@@ -576,7 +576,7 @@ async def health_check(request: Request):
 
 
 @mcp.tool()
-async def get_webhook_events(account_id: str = None, limit: int = 10) -> dict:
+async def get_webhook_events(account_id: str | None, limit: int = 10) -> dict:
     """Get recent webhook events for debugging and monitoring."""
     try:
         events = db.get_webhook_events(account_id=account_id, limit=limit)
